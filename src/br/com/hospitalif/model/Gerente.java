@@ -1,4 +1,4 @@
-package br.com.hospitalif.model;
+package br.com.hospitalif.model.model;
 
 public class Gerente extends Funcionario {
 
