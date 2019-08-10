@@ -1,4 +1,4 @@
-package br.com.hospitalif.model.model;
+package br.com.hospitalif.model;
 
 import java.util.Date;
 import java.util.List;
