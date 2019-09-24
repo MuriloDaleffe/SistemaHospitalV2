@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
@@ -69,7 +68,6 @@
                <Font size="14.0" />
             </font>
          </Label>
-            <ComboBox layoutX="204.0" layoutY="390.0" prefHeight="25.0" prefWidth="281.0" promptText="Escolha o Sexo" style="-fx-background-radius: 20; -fx-background-color: #000733;" />
       </children>
    </Pane>
    <Label layoutX="183.0" layoutY="46.0" text="Cadastro Pessoa" textFill="#ddd9d9">
