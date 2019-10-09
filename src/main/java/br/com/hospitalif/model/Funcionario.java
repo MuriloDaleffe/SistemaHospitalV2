@@ -6,7 +6,6 @@ public class Funcionario extends Pessoa{
     private String login;
     private String senha;
     private String statusDeUsuario;
-    private Pessoa pessoa;
 
     public Funcionario() {
     }
@@ -43,11 +42,4 @@ public class Funcionario extends Pessoa{
         this.statusDeUsuario = statusDeUsuario;
     }
 
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
 }

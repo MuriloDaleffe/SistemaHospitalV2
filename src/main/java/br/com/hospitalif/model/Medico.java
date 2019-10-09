@@ -2,11 +2,19 @@ package br.com.hospitalif.model;
 
 public class Medico extends Funcionario {
 
+    private int idMedico;
     private String numeroRegistro;
     private String especialidade;
-    private Funcionario funcionario;
 
     public Medico() {
+    }
+
+    public int getIdMedico() {
+        return idMedico;
+    }
+
+    public void setIdMedico(int idMedico) {
+        this.idMedico = idMedico;
     }
 
     public String getNumeroRegistro() {
@@ -25,11 +33,5 @@ public class Medico extends Funcionario {
         this.especialidade = especialidade;
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
 
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
 }
