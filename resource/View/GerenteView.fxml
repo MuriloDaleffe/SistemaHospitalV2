@@ -1,35 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #000733;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.GerenteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="716.0" style="-fx-background-color: #000733;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.GerenteController">
     <children>
-        <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
+        <Pane layoutY="75.0" prefHeight="776.0" prefWidth="716.0">
             <children>
-                <TextField fx:id="txtCargo" layoutX="203.0" layoutY="62.0" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
-                <Label layoutX="56.0" layoutY="69.0" prefHeight="20.0" prefWidth="59.0" text="Cargo" textFill="#ddd9d9">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
-                <Separator layoutX="56.0" layoutY="429.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
-                <Separator layoutX="56.0" layoutY="20.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
-                <Button fx:id="btnCancel" layoutX="165.0" layoutY="488.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="CANCEL" textFill="WHITE" />
-                <Button fx:id="btnSave" layoutX="299.0" layoutY="488.0" mnemonicParsing="false" onAction="#cadastroGerente" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #CE201C;" text="SAVE" textFill="WHITE" />
+                <Separator layoutX="147.0" layoutY="671.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Separator layoutX="132.0" layoutY="21.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Button fx:id="btnCancel" layoutX="235.0" layoutY="706.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="CANCEL" textFill="WHITE" />
+                <Button fx:id="btnSave" layoutX="369.0" layoutY="706.0" mnemonicParsing="false" onAction="#cadastroGerente" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #CE201C;" text="SAVE" textFill="WHITE" />
+            <TextField fx:id="txtNome" layoutX="285.0" layoutY="114.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o nome completo" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="124.0" layoutY="121.0" prefHeight="20.0" prefWidth="73.0" text="Nome" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtLogin" layoutX="283.0" layoutY="228.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o login" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="122.0" layoutY="235.0" prefHeight="20.0" prefWidth="73.0" text="Login" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSenha" layoutX="281.0" layoutY="288.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a senha" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css">
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TextField>
+            <Label layoutX="120.0" layoutY="295.0" prefHeight="20.0" prefWidth="59.0" text="Senha" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtStatusUsuario" layoutX="281.0" layoutY="170.0" opacity="0.5" prefHeight="33.0" prefWidth="281.0" promptText="Digite o status" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="124.0" layoutY="176.0" prefHeight="20.0" prefWidth="112.0" text="Status Usuário" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCPF" layoutX="281.0" layoutY="347.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o CPF" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="120.0" layoutY="354.0" prefHeight="20.0" prefWidth="73.0" text="CPF" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="intIdade" layoutX="277.0" layoutY="412.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a idade" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="123.0" layoutY="419.0" prefHeight="20.0" prefWidth="66.0" text="Idade" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTipoSang" layoutX="275.0" layoutY="475.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o tipo sanquíneo" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css">
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TextField>
+            <Label layoutX="124.0" layoutY="482.0" prefHeight="20.0" prefWidth="112.0" text="Tipo Sanquíneo" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cboSexo" layoutX="277.0" layoutY="541.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o sexo" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css">
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TextField>
+            <Label layoutX="126.0" layoutY="548.0" prefHeight="20.0" prefWidth="59.0" text="Sexo" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtStatusPessoa" layoutX="274.0" layoutY="599.0" opacity="0.5" prefHeight="33.0" prefWidth="281.0" promptText="Digite o status" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="120.0" layoutY="606.0" prefHeight="20.0" prefWidth="102.0" text="Status Pessoa" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCargo" layoutX="286.0" layoutY="58.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o cargo" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="122.0" layoutY="65.0" prefHeight="20.0" prefWidth="112.0" text="Cargo" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
-        <Label layoutX="183.0" layoutY="46.0" text="Cadastro Gerente" textFill="#ddd9d9">
+        <Label layoutX="266.0" layoutY="40.0" text="Cadastro Gerente" textFill="#ddd9d9">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="515.0" layoutY="4.0" prefHeight="20.0" prefWidth="21.0" text="X" textFill="#ddd9d9">
+        <Label alignment="CENTER" layoutX="681.0" layoutY="14.0" prefHeight="20.0" prefWidth="21.0" text="X" textFill="#ddd9d9">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>

@@ -9,22 +9,37 @@ import javafx.scene.control.TextField;
 public class PacienteController {
 
     @FXML
-    private TextField txtNome;
-
-    @FXML
     private Button btnCancel;
 
     @FXML
     private Button btnSave;
 
     @FXML
+    private TextField txtNome;
+
+    @FXML
+    private TextField txtCPF;
+
+    @FXML
+    private TextField intIdade;
+
+    @FXML
+    private TextField txtTipoSang;
+
+    @FXML
+    private TextField cboSexo;
+
+    @FXML
+    private TextField txtStatusPessoa;
+
+    @FXML
     private TextArea txtHistorico;
 
     @FXML
-    private TextArea txtEnfermidade;
+    private TextArea txtDoenca;
 
     @FXML
-    void cadastrarPaciente(ActionEvent event) {
+    void cadastrarMedico(ActionEvent event) {
 
     }
 
@@ -34,3 +49,4 @@ public class PacienteController {
     }
 
 }
+

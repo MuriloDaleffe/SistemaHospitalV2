@@ -3,7 +3,7 @@ package br.com.hospitalif.model;
 import java.util.Date;
 import java.util.List;
 
-public class Atendimento {
+public class Atendimento extends Entrada {
 
     private int idAtendimento;
     private String comentarioEnfermeiro;
@@ -12,8 +12,7 @@ public class Atendimento {
     private float altura;
     private Date data;
     private List<EnfermidadePessoal> doenca;
-    private Enfermeiro enfermeiro;
-    private Medico medico;
+
 
     public Atendimento() {
     }
@@ -74,19 +73,4 @@ public class Atendimento {
         this.doenca = doenca;
     }
 
-    public Enfermeiro getEnfermeiro() {
-        return enfermeiro;
-    }
-
-    public void setEnfermeiro(Enfermeiro enfermeiro) {
-        this.enfermeiro = enfermeiro;
-    }
-
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
-    }
 }

@@ -3,14 +3,13 @@ package br.com.hospitalif.model;
 import java.util.Date;
 import java.util.List;
 
-public class Entrada {
+public class Entrada extends Paciente {
 
     private int idEntrada;
     private Date dataEntrada;
     private Date dataSaida;
     private String statusDeEntrada;
     private List<Atendimento> situacaoDePaciente;
-    private Paciente paciente;
 
     public Entrada() {
     }
@@ -55,11 +54,4 @@ public class Entrada {
         this.situacaoDePaciente = situacaoDePaciente;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
 }

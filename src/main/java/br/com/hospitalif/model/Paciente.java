@@ -2,12 +2,12 @@ package br.com.hospitalif.model;
 
 import java.util.List;
 
-public class Paciente {
+public class Paciente extends Pessoa{
 
     private int idPaciente;
     private List<EnfermidadePessoal> doenca;
     private List<Entrada> historico;
-    private Pessoa pessoa;
+
 
     public Paciente() {
     }
@@ -36,11 +36,4 @@ public class Paciente {
         this.historico = historico;
     }
 
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
 }

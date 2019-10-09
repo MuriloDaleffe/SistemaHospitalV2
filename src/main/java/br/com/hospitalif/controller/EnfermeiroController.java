@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class GerenteController {
+public class EnfermeiroController {
 
     @FXML
     private Button btnCancel;
@@ -41,10 +41,13 @@ public class GerenteController {
     private TextField txtStatusPessoa;
 
     @FXML
-    private TextField txtCargo;
+    private TextField txtEspecialidade;
 
     @FXML
-    void cadastroGerente(ActionEvent event) {
+    private TextField txtNumRegistro;
+
+    @FXML
+    void cadastrarEnfermeiro(ActionEvent event) {
 
     }
 
@@ -54,4 +57,3 @@ public class GerenteController {
     }
 
 }
-

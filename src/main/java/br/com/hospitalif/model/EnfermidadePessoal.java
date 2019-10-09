@@ -1,11 +1,10 @@
 package br.com.hospitalif.model;
 
-public class EnfermidadePessoal {
+public class EnfermidadePessoal extends Enfermidade {
 
     private int idEnfermidadePessoal;
     private String comentario;
     private String statusDeEnfermidade;
-    private Enfermidade enfermidade;
 
     public EnfermidadePessoal() {
     }
@@ -34,11 +33,4 @@ public class EnfermidadePessoal {
         this.statusDeEnfermidade = statusDeEnfermidade;
     }
 
-    public Enfermidade getEnfermidade() {
-        return enfermidade;
-    }
-
-    public void setEnfermidade(Enfermidade enfermidade) {
-        this.enfermidade = enfermidade;
-    }
 }
