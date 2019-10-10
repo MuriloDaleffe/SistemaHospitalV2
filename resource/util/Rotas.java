@@ -1,7 +1,7 @@
 package util;
 
 public class Rotas {
-    public static String ADMINISTRADOR = "../View/AdministradorInterface.fxml";
+    public static String ADMINISTRADOR = "../View/AdministradorView.fxml";
     public static String ATENDENTE = "../View/AtendenteView.fxml";
     public static String ATENDIMENTO = "../View/AtendimentoView.fxml";
     public static String ENFERMEIRO = "../View/EnfermeiroView.fxml";

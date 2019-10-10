@@ -16,8 +16,9 @@
             <children>
                 <Separator layoutX="147.0" layoutY="671.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
                 <Separator layoutX="132.0" layoutY="21.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
-                <Button fx:id="btnCancel" layoutX="235.0" layoutY="706.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="CANCEL" textFill="WHITE" />
-                <Button fx:id="btnSave" layoutX="369.0" layoutY="706.0" mnemonicParsing="false" onAction="#cadastroGerente" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #CE201C;" text="SAVE" textFill="WHITE" />
+                <Button fx:id="btnReset" layoutX="306.0" layoutY="709.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="RESETAR" textFill="WHITE" />
+                <Button fx:id="btnSave" layoutX="427.0" layoutY="710.0" mnemonicParsing="false" onAction="#save" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #0FCE13;" text="SALVAR" textFill="WHITE" />
+                <Button fx:id="btnCancel" layoutX="179.0" layoutY="709.0" mnemonicParsing="false" onAction="#cancel" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #CE201C;" text="CANCELAR" textFill="WHITE" />
             <TextField fx:id="txtNome" layoutX="285.0" layoutY="114.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o nome completo" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
             <Label layoutX="124.0" layoutY="121.0" prefHeight="20.0" prefWidth="73.0" text="Nome" textFill="#ddd9d9">
                <font>
@@ -107,11 +108,6 @@
         <Label layoutX="266.0" layoutY="40.0" text="Cadastro Gerente" textFill="#ddd9d9">
             <font>
                 <Font size="24.0" />
-            </font>
-        </Label>
-        <Label alignment="CENTER" layoutX="681.0" layoutY="14.0" prefHeight="20.0" prefWidth="21.0" text="X" textFill="#ddd9d9">
-            <font>
-                <Font name="System Bold" size="14.0" />
             </font>
         </Label>
     </children>

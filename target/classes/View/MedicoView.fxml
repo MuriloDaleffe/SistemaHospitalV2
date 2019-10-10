@@ -22,7 +22,7 @@
                 <Separator layoutX="156.0" layoutY="723.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
                 <Separator layoutX="156.0" layoutY="35.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
                 <Button fx:id="btnReset" layoutX="324.0" layoutY="748.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="RESETAR" textFill="WHITE" />
-                <Button fx:id="btnSave" layoutX="445.0" layoutY="749.0" mnemonicParsing="false" onAction="#cadastrarMedico" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #0FCE13;" text="SALVAR" textFill="WHITE" />
+                <Button fx:id="btnSave" layoutX="445.0" layoutY="749.0" mnemonicParsing="false" onAction="#save" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #0FCE13;" text="SALVAR" textFill="WHITE" />
             <TextField fx:id="txtNome" layoutX="323.0" layoutY="175.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o nome completo" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
             <Label layoutX="162.0" layoutY="182.0" prefHeight="20.0" prefWidth="73.0" text="Nome" textFill="#ddd9d9">
                <font>
