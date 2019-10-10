@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #000733;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #000733;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.LoginController">
 <children>
    <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
       <children>
@@ -31,6 +31,7 @@
             </Label>
             <PasswordField fx:id="txtSenha" layoutX="188.0" layoutY="295.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a senha" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-border-radius: 20; -fx-background-insets: 0;" />
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="170.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="168.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
       </children>
    </Pane>
    <Label layoutX="240.0" layoutY="57.0" text="Login" textFill="#ddd9d9">

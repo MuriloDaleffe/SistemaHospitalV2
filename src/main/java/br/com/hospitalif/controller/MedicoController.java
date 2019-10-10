@@ -2,8 +2,11 @@ package br.com.hospitalif.controller;
 
 import br.com.hospitalif.DAO.MedicoDAO;
 import br.com.hospitalif.model.Medico;
+import util.Rotas;
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -12,7 +15,7 @@ import java.sql.SQLException;
 public class MedicoController {
 
     @FXML
-    private Button btnCancel;
+    private Button btnReset;
 
     @FXML
     private Button btnSave;
@@ -51,7 +54,10 @@ public class MedicoController {
     private TextField txtNumRegistro;
 
     @FXML
-    void cadastrarMedico(ActionEvent event) throws SQLException {
+    private Button btnCancel;
+
+    @FXML
+    void save(ActionEvent event) throws SQLException {
 
         Medico m = new Medico();
 
@@ -69,11 +75,35 @@ public class MedicoController {
 
         MedicoDAO.saveMedico(m);
 
+        msgInfo();
+    }
+
+    @FXML
+    void cancel(ActionEvent event) throws Exception {
+        Main.openPage(Rotas.SISTEMA);
     }
 
     @FXML
     void reset(ActionEvent event) {
+        txtNumRegistro.clear();
+        txtEspecialidade.clear();
+        txtNome.clear();
+        txtStatusUsuario.clear();
+        txtLogin.clear();
+        txtSenha.clear();
+        txtCPF.clear();
+        intIdade.clear();
+        txtTipoSang.clear();
+        cboSexo.clear();
+        txtStatusPessoa.clear();
+    }
 
+    public void msgInfo(){
+        Alert msg = new Alert(Alert.AlertType.INFORMATION);
+        msg.setContentText("Médico cadastrado com sucesso!");
+        msg.setHeaderText("Cadastro de Médico!");
+        msg.show();
     }
 
 }
+

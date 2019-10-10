@@ -1,10 +1,13 @@
 package br.com.hospitalif.controller;
 
+import br.com.hospitalif.DAO.LoginDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+
+import java.sql.SQLException;
 
 public class LoginController {
 
@@ -21,21 +24,14 @@ public class LoginController {
     private TextField txtSenha;
 
     @FXML
-    void login(ActionEvent event) {
-        System.out.println(txtLogin.getText());
-        msgInfo(txtLogin.getText());
+    void login(ActionEvent event) throws Exception {
+        LoginDAO.login(txtLogin.getText(), txtSenha.getText());
     }
 
     @FXML
     void reset(ActionEvent event) {
-
-    }
-
-    public void msgInfo(String msg){
-        Alert msgg = new Alert(Alert.AlertType.INFORMATION);
-        msgg.setContentText("Minha Msg Aqui!");
-        msgg.setHeaderText("Header Aqui!");
-        msgg.show();
+        txtLogin.clear();
+        txtSenha.clear();
     }
 
 }
