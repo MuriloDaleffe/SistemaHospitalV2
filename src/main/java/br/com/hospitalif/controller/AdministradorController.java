@@ -94,8 +94,8 @@ public class AdministradorController {
 
     public void msgInfo(){
         Alert msg = new Alert(Alert.AlertType.INFORMATION);
-        msg.setContentText("Médico cadastrado com sucesso!");
-        msg.setHeaderText("Cadastro de Médico!");
+        msg.setContentText("Administrador cadastrado com sucesso!");
+        msg.setHeaderText("Cadastro de Administrador!");
         msg.show();
     }
 

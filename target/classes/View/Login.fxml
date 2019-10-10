@@ -14,7 +14,7 @@
 <children>
    <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
       <children>
-         <TextField fx:id="txtLogin" layoutX="188.0" layoutY="241.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o nome de login" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+         <TextField fx:id="txtLogin" layoutX="188.0" layoutY="241.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o nome de login" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@../CSS/app.css" />
          <Label layoutX="41.0" layoutY="248.0" prefHeight="20.0" prefWidth="59.0" text="Login" textFill="#ddd9d9">
             <font>
                <Font size="14.0" />
@@ -37,11 +37,6 @@
    <Label layoutX="240.0" layoutY="57.0" text="Login" textFill="#ddd9d9">
       <font>
          <Font size="24.0" />
-      </font>
-   </Label>
-   <Label alignment="CENTER" layoutX="515.0" layoutY="4.0" prefHeight="20.0" prefWidth="21.0" text="X" textFill="#ddd9d9">
-      <font>
-         <Font name="System Bold" size="14.0" />
       </font>
    </Label>
 </children>

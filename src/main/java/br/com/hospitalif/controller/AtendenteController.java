@@ -94,8 +94,8 @@ public class AtendenteController {
 
     public void msgInfo(){
         Alert msg = new Alert(Alert.AlertType.INFORMATION);
-        msg.setContentText("Médico cadastrado com sucesso!");
-        msg.setHeaderText("Cadastro de Médico!");
+        msg.setContentText("Atendente cadastrado com sucesso!");
+        msg.setHeaderText("Cadastro de Atendente!");
         msg.show();
     }
 

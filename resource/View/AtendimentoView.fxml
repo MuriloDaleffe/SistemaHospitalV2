@@ -1,89 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #000733;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.AtendimentoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="681.0" style="-fx-background-color: #000733;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.AtendimentoController">
     <children>
-        <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
+        <Pane layoutY="64.0" prefHeight="726.0" prefWidth="681.0">
             <children>
-                <TextField fx:id="txtMedico" layoutX="203.0" layoutY="33.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o médico responsavel" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
-                <Label layoutX="54.0" layoutY="40.0" prefHeight="20.0" prefWidth="59.0" text="Médico" textFill="#ddd9d9">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
-                <Separator layoutX="56.0" layoutY="460.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
-                <Separator layoutX="56.0" layoutY="20.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
-                <Button fx:id="btnCancel" layoutX="165.0" layoutY="488.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="CANCEL" textFill="WHITE" />
-                <Button fx:id="btnSave" layoutX="299.0" layoutY="488.0" mnemonicParsing="false" onAction="#cadastrarAtendimento" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #CE201C;" text="SAVE" textFill="WHITE" />
-                <TextField fx:id="txtEnfermeiro" layoutX="201.0" layoutY="140.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o enfermeiro responsável" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
-                <Label layoutX="54.0" layoutY="147.0" prefHeight="20.0" prefWidth="88.0" text="Enfermeiro" textFill="#ddd9d9">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="txtComEnfermeiro" layoutX="201.0" layoutY="191.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o comentário do enfermeiro" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css">
-                    <contextMenu>
-                        <ContextMenu>
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                            </items>
-                        </ContextMenu>
-                    </contextMenu></TextField>
-                <Label layoutX="23.0" layoutY="198.0" prefHeight="20.0" prefWidth="139.0" text="Comentário Enfermeiro" textFill="#ddd9d9">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
-                <Label layoutX="56.0" layoutY="259.0" prefHeight="20.0" prefWidth="108.0" text="Data" textFill="#ddd9d9">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="txtEnfermidade" layoutX="203.0" layoutY="308.0" opacity="0.5" prefHeight="33.0" prefWidth="281.0" promptText="Lista das enfermidades" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
-                <Label layoutX="56.0" layoutY="315.0" prefHeight="20.0" prefWidth="95.0" text="Enfermidades" textFill="#ddd9d9">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
-            <TextField fx:id="txtComMedico" layoutX="203.0" layoutY="88.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o comentário do médico" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
-            <Label layoutX="20.0" layoutY="95.0" prefHeight="20.0" prefWidth="152.0" text="Comentário Médico" textFill="#ddd9d9">
+                <Separator layoutX="141.0" layoutY="635.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Separator layoutX="141.0" layoutY="-2.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Button fx:id="btnReset" layoutX="300.0" layoutY="648.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="RESETAR" textFill="WHITE" />
+                <Button fx:id="btnSave" layoutX="421.0" layoutY="649.0" mnemonicParsing="false" onAction="#save" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #0FCE13;" text="SALVAR" textFill="WHITE" />
+                <Button fx:id="btnCancel" layoutX="173.0" layoutY="648.0" mnemonicParsing="false" onAction="#cancel" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #CE201C;" text="CANCELAR" textFill="WHITE" />
+            <Label layoutX="115.0" layoutY="34.0" prefHeight="20.0" prefWidth="108.0" text="Data Entrada" textFill="#ddd9d9">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <DatePicker fx:id="dateData" layoutX="203.0" layoutY="254.0" style="-fx-background-color: #000733;" />
-            <TextField fx:id="txtAltura" layoutX="203.0" layoutY="357.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a altura" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
-            <Label layoutX="54.0" layoutY="364.0" prefHeight="20.0" prefWidth="77.0" text="Altura" textFill="#ddd9d9">
+            <DatePicker fx:id="txtDataEntr" layoutX="282.0" layoutY="29.0" style="-fx-background-color: #000733;" />
+            <TextField fx:id="txtAltura" layoutX="282.0" layoutY="126.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a altura" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="121.0" layoutY="130.0" prefHeight="20.0" prefWidth="77.0" text="Altura" textFill="#ddd9d9">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPeso" layoutX="203.0" layoutY="412.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o peso" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
-            <Label layoutX="54.0" layoutY="419.0" prefHeight="20.0" prefWidth="77.0" text="Peso" textFill="#ddd9d9">
+            <TextField fx:id="txtPeso" layoutX="282.0" layoutY="181.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o peso" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="121.0" layoutY="185.0" prefHeight="20.0" prefWidth="77.0" text="Peso" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="118.0" layoutY="236.0" prefHeight="20.0" prefWidth="95.0" text="Status Entrada" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtSituPac" layoutX="285.0" layoutY="306.0" prefHeight="62.0" prefWidth="281.0" promptText="Digite o histórico" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="115.0" layoutY="310.0" prefHeight="20.0" prefWidth="131.0" text="Situação do Paciente" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtStaEntr" layoutX="283.0" layoutY="236.0" prefHeight="55.0" prefWidth="281.0" promptText="Descreva a enfermidade" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="115.0" layoutY="80.0" prefHeight="20.0" prefWidth="108.0" text="Data Saída" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="txtDataSai" layoutX="282.0" layoutY="75.0" style="-fx-background-color: #000733;" />
+            <Label layoutX="119.0" layoutY="383.0" prefHeight="20.0" prefWidth="121.0" text="Histórico Doença" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtComentMedico" layoutX="285.0" layoutY="452.0" prefHeight="62.0" prefWidth="281.0" promptText="Comentário Médico" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="115.0" layoutY="456.0" prefHeight="20.0" prefWidth="131.0" text="Comentário Médico" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtHistDoenca" layoutX="284.0" layoutY="383.0" prefHeight="55.0" prefWidth="281.0" promptText="Histórico do Paciente" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <TextArea fx:id="txtComentEnfer" layoutX="285.0" layoutY="536.0" prefHeight="62.0" prefWidth="281.0" promptText="Comentário Enfermeiro" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+            <Label layoutX="115.0" layoutY="540.0" prefHeight="20.0" prefWidth="145.0" text="Comentário Enfermeiro" textFill="#ddd9d9">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             </children>
         </Pane>
-        <Label layoutX="200.0" layoutY="40.0" text="Atendimento" textFill="#ddd9d9">
+        <Label layoutX="215.0" layoutY="24.0" text="Cadastro Atendimento" textFill="#ddd9d9">
             <font>
                 <Font size="24.0" />
-            </font>
-        </Label>
-        <Label alignment="CENTER" layoutX="515.0" layoutY="4.0" prefHeight="20.0" prefWidth="21.0" text="X" textFill="#ddd9d9">
-            <font>
-                <Font name="System Bold" size="14.0" />
             </font>
         </Label>
     </children>
