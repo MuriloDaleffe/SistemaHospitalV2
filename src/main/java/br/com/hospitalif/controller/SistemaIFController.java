@@ -33,6 +33,30 @@ public class SistemaIFController {
     private Button btnCad8;
 
     @FXML
+    private Button btnCad11;
+
+    @FXML
+    private Button btnCad21;
+
+    @FXML
+    private Button btnCad31;
+
+    @FXML
+    private Button btnCad41;
+
+    @FXML
+    private Button btnCad51;
+
+    @FXML
+    private Button btnCad61;
+
+    @FXML
+    private Button btnCad71;
+
+    @FXML
+    private Button btnCad81;
+
+    @FXML
     void cadastrarAdministrador(ActionEvent event) throws Exception {
         Main.openPage(Rotas.ADMINISTRADOR);
     }
@@ -72,4 +96,45 @@ public class SistemaIFController {
         Main.openPage(Rotas.PACIENTE);
     }
 
+    @FXML
+    void visualizarAdministrador(ActionEvent event) {
+
+    }
+
+    @FXML
+    void visualizarAtendente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void visualizarAtendimento(ActionEvent event) {
+
+    }
+
+    @FXML
+    void visualizarEnferPes(ActionEvent event) {
+
+    }
+
+    @FXML
+    void visualizarEnfermeiro(ActionEvent event) {
+
+    }
+
+    @FXML
+    void visualizarGerente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void visualizarMedico(ActionEvent event) throws Exception {
+        Main.openPage(Rotas.TABLEMEDICOVIEW);
+    }
+
+    @FXML
+    void visualizarPaciente(ActionEvent event) {
+
+    }
+
 }
+

@@ -1,6 +1,9 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
 import application.Main;
+import br.com.hospitalif.DAO2.PacienteDAO;
+import br.com.hospitalif.connectivity.SimpleEntityManager;
+import br.com.hospitalif.model.Paciente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -47,6 +50,25 @@ public class PacienteController {
     @FXML
     void save(ActionEvent event) {
 
+        Paciente m = new Paciente();
+
+        m.setNome(txtNome.getText());
+        m.setCpf(txtCPF.getText());
+        m.setIdade(Integer.parseInt(intIdade.getText()));
+        m.setTipoSanguineo(txtTipoSang.getText());
+        m.setSexo(cboSexo.getText());
+        m.setStatusDePessoa(txtStatusPessoa.getText());
+        m.setHistorico(txtHistorico.getText());
+        m.setDoenca(txtDoenca.getText());
+
+        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
+        PacienteDAO dao = new PacienteDAO(sem.getEntityManager());
+        dao.save(m);
+        sem.beginTransaction();
+        sem.commit();
+        sem.close();
+
+        msgInfo();
     }
 
     @FXML

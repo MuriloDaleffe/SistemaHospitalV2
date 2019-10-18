@@ -1,22 +1,14 @@
 package br.com.hospitalif.model;
 
-public class Funcionario extends Pessoa{
+import javax.persistence.*;
 
-    private int idFuncionario;
+@MappedSuperclass
+public abstract class Funcionario extends Pessoa{
+
     private String login;
     private String senha;
     private String statusDeUsuario;
 
-    public Funcionario() {
-    }
-
-    public int getIdFuncionario() {
-        return idFuncionario;
-    }
-
-    public void setIdFuncionario(int idFuncionario) {
-        this.idFuncionario = idFuncionario;
-    }
 
     public String getLogin() {
         return login;

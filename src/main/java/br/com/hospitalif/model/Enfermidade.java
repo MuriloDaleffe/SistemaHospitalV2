@@ -1,8 +1,16 @@
 package br.com.hospitalif.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class Enfermidade {
 
-    private int idEnfermidade;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
     private String nome;
     private String tipo;
     private String descricao;
@@ -10,12 +18,12 @@ public class Enfermidade {
     public Enfermidade() {
     }
 
-    public int getIdEnfermidade() {
-        return idEnfermidade;
+    public long getId() {
+        return id;
     }
 
-    public void setIdEnfermidade(int idEnfermidade) {
-        this.idEnfermidade = idEnfermidade;
+    public void setIdEnfermidade(long id) {
+        this.id = id;
     }
 
     public String getNome() {

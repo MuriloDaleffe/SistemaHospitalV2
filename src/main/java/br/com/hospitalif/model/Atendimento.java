@@ -11,7 +11,7 @@ public class Atendimento extends Entrada {
     private float peso;
     private float altura;
     private Date data;
-    private List<EnfermidadePessoal> doenca;
+    private String doenca;
 
 
     public Atendimento() {
@@ -65,12 +65,11 @@ public class Atendimento extends Entrada {
         this.data = data;
     }
 
-    public List<EnfermidadePessoal> getDoenca() {
+    public String getDoenca() {
         return doenca;
     }
 
-    public void setDoenca(List<EnfermidadePessoal> doenca) {
+    public void setDoenca(String doenca) {
         this.doenca = doenca;
     }
-
 }

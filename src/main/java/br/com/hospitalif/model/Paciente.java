@@ -1,39 +1,30 @@
 package br.com.hospitalif.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.List;
 
+@Entity
+@Table(name="Paciente")
 public class Paciente extends Pessoa{
 
-    private int idPaciente;
-    private List<EnfermidadePessoal> doenca;
-    private List<Entrada> historico;
+    private String doenca;
+    private String historico;
 
 
-    public Paciente() {
-    }
-
-    public int getIdPaciente() {
-        return idPaciente;
-    }
-
-    public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
-    }
-
-    public List<EnfermidadePessoal> getDoenca() {
+    public String getDoenca() {
         return doenca;
     }
 
-    public void setDoenca(List<EnfermidadePessoal> doenca) {
+    public void setDoenca(String doenca) {
         this.doenca = doenca;
     }
 
-    public List<Entrada> getHistorico() {
+    public String getHistorico() {
         return historico;
     }
 
-    public void setHistorico(List<Entrada> historico) {
+    public void setHistorico(String historico) {
         this.historico = historico;
     }
-
 }

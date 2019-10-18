@@ -1,4 +1,4 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -37,18 +37,20 @@ public class ConnectionClass {
         return this.status;
     }
 
-    public boolean closeConnection() throws SQLException {
-        this.conn.close();
+    public boolean closeConnection() {
+        try {
+            this.conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     public void resetConnection(){
-        try {
-            this.closeConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        this.closeConnection();
         this.getConnection();
     }
+
+
 
 }

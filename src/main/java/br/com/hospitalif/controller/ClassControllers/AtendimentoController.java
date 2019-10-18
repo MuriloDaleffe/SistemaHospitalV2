@@ -1,4 +1,4 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
 import application.Main;
 import javafx.event.ActionEvent;
@@ -61,7 +61,6 @@ public class AtendimentoController {
         txtPeso.clear();
         txtSituPac.clear();
         txtStaEntr.clear();
-        txtDataEntr.clear();
     }
 
     @FXML

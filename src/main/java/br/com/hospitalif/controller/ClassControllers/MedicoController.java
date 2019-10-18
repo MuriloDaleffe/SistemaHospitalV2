@@ -1,6 +1,7 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
-import br.com.hospitalif.DAO.MedicoDAO;
+import br.com.hospitalif.DAO2.MedicoDAO;
+import br.com.hospitalif.connectivity.SimpleEntityManager;
 import br.com.hospitalif.model.Medico;
 import util.Rotas;
 import application.Main;
@@ -61,7 +62,7 @@ public class MedicoController {
 
         Medico m = new Medico();
 
-        m.setNumeroRegistro(txtNumRegistro.getText());
+        m.setNumRegistro(txtNumRegistro.getText());
         m.setEspecialidade(txtEspecialidade.getText());
         m.setNome(txtNome.getText());
         m.setStatusDeUsuario(txtStatusUsuario.getText());
@@ -73,7 +74,12 @@ public class MedicoController {
         m.setSexo(cboSexo.getText());
         m.setStatusDePessoa(txtStatusPessoa.getText());
 
-        MedicoDAO.saveMedico(m);
+        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
+        MedicoDAO dao = new MedicoDAO(sem.getEntityManager());
+        dao.save(m);
+        sem.beginTransaction();
+        sem.commit();
+        sem.close();
 
         msgInfo();
     }
@@ -103,6 +109,23 @@ public class MedicoController {
         msg.setContentText("Médico cadastrado com sucesso!");
         msg.setHeaderText("Cadastro de Médico!");
         msg.show();
+    }
+
+    @FXML
+    public void editar(Medico m){
+        System.out.println(m.getNome());
+        txtNome.setText(m.getNome());
+        txtNumRegistro.setText(m.getNumRegistro());
+        txtEspecialidade.setText(m.getEspecialidade());
+        txtStatusUsuario.setText(m.getStatusDeUsuario());
+        txtLogin.setText(m.getLogin());
+        txtSenha.setText(m.getSenha());
+        txtCPF.setText(m.getCpf());
+        intIdade.setText(String.valueOf(m.getIdade()));
+        txtTipoSang.setText(m.getTipoSanguineo());
+        cboSexo.setText(m.getSexo());
+        txtStatusPessoa.setText(m.getStatusDePessoa());
+
     }
 
 }

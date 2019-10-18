@@ -1,4 +1,4 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
 import br.com.hospitalif.connectivity.ConnectionClass;
 import javafx.event.ActionEvent;

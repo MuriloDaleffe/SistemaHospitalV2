@@ -1,20 +1,14 @@
 package br.com.hospitalif.model;
 
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Gerente")
 public class Gerente extends Funcionario {
 
     private String cargo;
-    private int idGerente;
-
-    public int getIdGerente() {
-        return idGerente;
-    }
-
-    public void setIdGerente(int idGerente) {
-        this.idGerente = idGerente;
-    }
-
-    public Gerente() {
-    }
 
     public String getCargo() {
         return cargo;

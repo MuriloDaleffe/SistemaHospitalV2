@@ -24,7 +24,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <DatePicker fx:id="dateDataEntr" layoutX="282.0" layoutY="29.0" style="-fx-background-color: #000733;" />
+            <DatePicker fx:id="txtDataEntr" layoutX="282.0" layoutY="29.0" style="-fx-background-color: #000733;" />
             <TextField fx:id="txtAltura" layoutX="282.0" layoutY="126.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a altura" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
             <Label layoutX="121.0" layoutY="130.0" prefHeight="20.0" prefWidth="77.0" text="Altura" textFill="#ddd9d9">
                <font>
@@ -54,7 +54,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <DatePicker fx:id="dateDataSai" layoutX="282.0" layoutY="75.0" style="-fx-background-color: #000733;" />
+            <DatePicker fx:id="txtDataSai" layoutX="282.0" layoutY="75.0" style="-fx-background-color: #000733;" />
             <Label layoutX="119.0" layoutY="383.0" prefHeight="20.0" prefWidth="121.0" text="Histórico Doença" textFill="#ddd9d9">
                <font>
                   <Font size="14.0" />

@@ -1,8 +1,13 @@
 package br.com.hospitalif.model;
 
-public class Pessoa {
+import javax.persistence.*;
 
-    private int idPessoa;
+@MappedSuperclass
+public abstract class Pessoa {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
     private String nome;
     private String cpf;
     private int idade;
@@ -10,15 +15,13 @@ public class Pessoa {
     private String sexo;
     private String statusDePessoa;
 
-    public Pessoa() {
+
+    public long getId() {
+        return id;
     }
 
-    public int getIdPessoa() {
-        return idPessoa;
-    }
-
-    public void setIdPessoa(int idPessoa) {
-        this.idPessoa = idPessoa;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNome() {

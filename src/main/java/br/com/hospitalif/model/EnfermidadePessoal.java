@@ -1,21 +1,14 @@
 package br.com.hospitalif.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "EnfermidadePessoal")
 public class EnfermidadePessoal extends Enfermidade {
 
-    private int idEnfermidadePessoal;
     private String comentario;
     private String statusDeEnfermidade;
-
-    public EnfermidadePessoal() {
-    }
-
-    public int getIdEnfermidadePessoal() {
-        return idEnfermidadePessoal;
-    }
-
-    public void setIdEnfermidadePessoal(int idEnfermidadePessoal) {
-        this.idEnfermidadePessoal = idEnfermidadePessoal;
-    }
 
     public String getComentario() {
         return comentario;

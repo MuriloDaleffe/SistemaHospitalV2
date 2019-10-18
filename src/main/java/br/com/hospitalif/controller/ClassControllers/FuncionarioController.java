@@ -1,14 +1,14 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class EnferPesController {
+public class FuncionarioController {
 
     @FXML
-    private TextField txtComentario;
+    private TextField txtNome;
 
     @FXML
     private Button btnCancel;
@@ -17,10 +17,16 @@ public class EnferPesController {
     private Button btnSave;
 
     @FXML
+    private TextField txtLogin;
+
+    @FXML
+    private TextField txtSenha;
+
+    @FXML
     private TextField txtStatus;
 
     @FXML
-    void cadastrarEnferPes(ActionEvent event) {
+    void cadastrarFuncionario(ActionEvent event) {
 
     }
 
@@ -30,4 +36,3 @@ public class EnferPesController {
     }
 
 }
-

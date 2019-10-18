@@ -1,8 +1,9 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
 import application.Main;
-import br.com.hospitalif.DAO.AtendenteDAO;
-import br.com.hospitalif.model.Atendente;
+import br.com.hospitalif.DAO2.GerenteDAO;
+import br.com.hospitalif.connectivity.SimpleEntityManager;
+import br.com.hospitalif.model.Gerente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -12,16 +13,13 @@ import util.Rotas;
 
 import java.sql.SQLException;
 
-public class AtendenteController {
-
-    @FXML
-    private Button btnReset;
-
-    @FXML
-    private Button btnSave;
+public class GerenteController {
 
     @FXML
     private Button btnCancel;
+
+    @FXML
+    private Button btnSave;
 
     @FXML
     private TextField txtNome;
@@ -74,28 +72,33 @@ public class AtendenteController {
 
     @FXML
     void save(ActionEvent event) throws SQLException {
-        Atendente atendente = new Atendente();
+        Gerente gerente = new Gerente();
 
-        atendente.setCargo(txtCargo.getText());
-        atendente.setNome(txtNome.getText());
-        atendente.setStatusDeUsuario(txtStatusUsuario.getText());
-        atendente.setLogin(txtLogin.getText());
-        atendente.setSenha(txtSenha.getText());
-        atendente.setCpf(txtCPF.getText());
-        atendente.setIdade(Integer.parseInt(intIdade.getText()));
-        atendente.setTipoSanguineo(txtTipoSang.getText());
-        atendente.setSexo(cboSexo.getText());
-        atendente.setStatusDePessoa(txtStatusPessoa.getText());
+        gerente.setCargo(txtCargo.getText());
+        gerente.setNome(txtNome.getText());
+        gerente.setStatusDeUsuario(txtStatusUsuario.getText());
+        gerente.setLogin(txtLogin.getText());
+        gerente.setSenha(txtSenha.getText());
+        gerente.setCpf(txtCPF.getText());
+        gerente.setIdade(Integer.parseInt(intIdade.getText()));
+        gerente.setTipoSanguineo(txtTipoSang.getText());
+        gerente.setSexo(cboSexo.getText());
+        gerente.setStatusDePessoa(txtStatusPessoa.getText());
 
-        AtendenteDAO.save(atendente);
+        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
+        GerenteDAO dao = new GerenteDAO(sem.getEntityManager());
+        dao.save(gerente);
+        sem.beginTransaction();
+        sem.commit();
+        sem.close();
 
         msgInfo();
     }
 
     public void msgInfo(){
         Alert msg = new Alert(Alert.AlertType.INFORMATION);
-        msg.setContentText("Atendente cadastrado com sucesso!");
-        msg.setHeaderText("Cadastro de Atendente!");
+        msg.setContentText("Gerente cadastrado com sucesso!");
+        msg.setHeaderText("Cadastro de Gerente!");
         msg.show();
     }
 

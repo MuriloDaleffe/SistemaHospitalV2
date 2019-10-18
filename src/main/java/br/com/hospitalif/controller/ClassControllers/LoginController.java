@@ -1,4 +1,4 @@
-package br.com.hospitalif.controller;
+package br.com.hospitalif.controller.ClassControllers;
 
 import br.com.hospitalif.DAO.LoginDAO;
 import javafx.event.ActionEvent;

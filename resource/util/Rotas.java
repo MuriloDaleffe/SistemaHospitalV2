@@ -15,4 +15,7 @@ public class Rotas {
     public static String PESSOA = "../View/PessoaView.fxml";
     public static String LOGIN = "../View/Login.fxml";
     public static String SISTEMA = "../View/SistemaIFView.fxml";
+    public static String PERSISTENCEUNITNAME = "SistemaHospitalIF";
+    public static String TABLEMEDICOVIEW = "../View/TableMedicoView.fxml";
+
 }

@@ -1,16 +1,11 @@
 package br.com.hospitalif.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Administrador")
 public class Administrador extends Gerente {
-
-    private int idAdministrador;
-
-    public int getIdAdministrador() {
-        return idAdministrador;
-    }
-
-    public void setIdAdministrador(int idAdministrador) {
-        this.idAdministrador = idAdministrador;
-    }
 
     public int cadastrarFuncionario(){
         return 1;

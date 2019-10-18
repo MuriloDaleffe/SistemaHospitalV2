@@ -38,21 +38,33 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
         launch(args);
 
+//        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(Rotas.PERSISTENCEUNITNAME);
+//        EntityManager entityManager = entityManagerFactory.createEntityManager();
+//
 //        Medico m = new Medico();
-//        m.setNumeroRegistro("12345");
-//        m.setEspecialidade("Oftalmo");
-//        m.setNome("José");
+//
+//        MedicoDAO2 daoMedico = new MedicoDAO2(entityManager);
+//
+//        m.setNumeroRegistro("54321");
+//        m.setEspecialidade("Oftalmologista");
+//        m.setNome("José Arthur");
 //        m.setStatusDeUsuario("Ativo");
-//        m.setLogin("JoseOftalmo");
+//        m.setLogin("JoseOftalmo2");
 //        m.setSenha("qwert");
-//        m.setCpf("123456789");
+//        m.setCpf("987654321");
 //        m.setIdade(30);
-//        m.setTipoSanguineo("A");
+//        m.setTipoSanguineo("A-");
 //        m.setSexo("M");
 //        m.setStatusDePessoa("Médico");
 //
-//        MedicoDAO mDAO = new MedicoDAO();
-//        mDAO.saveMedico(m);
+//
+//        daoMedico.save(m);
+//
+//        entityManager.getTransaction().begin();
+//        entityManager.getTransaction().commit();
+//        entityManager.close();
+//
+//        System.out.println("Entidades salvas com sucesso!");
 
     }
 }
