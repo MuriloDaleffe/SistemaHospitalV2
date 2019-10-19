@@ -2,6 +2,7 @@ package br.com.hospitalif.controller.TableViewControllers;
 
 import application.Main;
 import br.com.hospitalif.DAO2.MedicoDAO;
+import br.com.hospitalif.DAO2.MedicoDAO2;
 import br.com.hospitalif.connectivity.ConnectionClass;
 import br.com.hospitalif.connectivity.SimpleEntityManager;
 import br.com.hospitalif.controller.ClassControllers.MedicoController;
@@ -16,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
 import util.Rotas;
 
@@ -93,9 +95,14 @@ public class TableMedicoViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        carregaTabela();
+
+    }
+
+    private void carregaTabela() {
         SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
-        MedicoDAO dao = new MedicoDAO(sem.getEntityManager());
-        List<Medico> medicoList = dao.findAll("Medico");
+        MedicoDAO2 dao = new MedicoDAO2(sem.getEntityManager());
+        List<Medico> medicoList = dao.getList();
 
         while (!medicoList.isEmpty()) {
             int i = 0;
@@ -103,12 +110,17 @@ public class TableMedicoViewController implements Initializable {
             i++;
         }
         FilteredList<Medico> filteredData = new FilteredList<>(oblist, b -> true);
+
         txtSearch.textProperty().addListener(((observable, oldValue, newValue) -> {
+
             filteredData.setPredicate(Medico -> {
+
                 if(newValue == null || newValue.isEmpty() ){
                     return true;
                 }
+
                 String lowerCaseFilter = newValue.toLowerCase();
+
                 if(Medico.getEspecialidade().toLowerCase().indexOf(lowerCaseFilter) != -1){
                     return true;
                 } else if(Medico.getNumRegistro().toLowerCase().indexOf(lowerCaseFilter) != -1){
@@ -182,54 +194,33 @@ public class TableMedicoViewController implements Initializable {
 //            e.printStackTrace();
 //        }
         configuraColunas();
-//        colNome.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colEspecialidade.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colCPF.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colLogin.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colSenha.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colStsPes.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colStsUsua.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colTipSang.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colSexo.setCellFactory(TextFieldTableCell.forTableColumn());
-//        colNumRegistro.setCellFactory(TextFieldTableCell.forTableColumn());
 
         table.setItems(sortedData);
-
     }
 
     @FXML
-    void delete(ActionEvent event) throws SQLException {
-//        table.getItems().removeAll(table.getSelectionModel().getSelectedItem());
-//        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
-//        MedicoDAO dao = new MedicoDAO(sem.getEntityManager());
-//        dao.delete(table.getSelectionModel().getSelectedItem());
-//        sem.beginTransaction();
-//        sem.commit();
-//        sem.close();
-
-        ConnectionClass conn = new ConnectionClass();
-        Connection conexao = conn.getConnection();
-
-        System.out.println(conn.getStatus());
-
-        String sqlInsere = "delete from Medico where numRegistro = ?";
-
-        PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-        stmt.setString(1, table.getSelectionModel().getSelectedItem().getNumRegistro());
-        stmt.execute();
-
+    void delete(ActionEvent event) throws Exception {
+        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
+        MedicoDAO2 dao = new MedicoDAO2(sem.getEntityManager());
+        dao.remover(table.getSelectionModel().getSelectedItem().getId());
+        Main.openPage(Rotas.TABLEMEDICOVIEW);
     }
 
     @FXML
     void edit(ActionEvent event) throws Exception {
+        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
+        MedicoDAO2 dao = new MedicoDAO2(sem.getEntityManager());
+        Medico m = table.getSelectionModel().getSelectedItem();
         MedicoController mc = new MedicoController();
+        mc.editar(m);
         Main.openPage(Rotas.MEDICO);
-        mc.editar(table.getSelectionModel().getSelectedItem());
+
     }
 
     @FXML
     void voltar(ActionEvent event) throws Exception {
         Main.openPage(Rotas.SISTEMA);
+
     }
 
     private void configuraColunas() {
@@ -244,7 +235,18 @@ public class TableMedicoViewController implements Initializable {
         colTipSang.setCellValueFactory(new PropertyValueFactory<>("tipoSanguineo"));
         colSexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
         colNumRegistro.setCellValueFactory(new PropertyValueFactory<>("numRegistro"));
-        colChck.setCellFactory(CheckBoxTableCell.forTableColumn(colChck));
+        colChck.setCellValueFactory(new PropertyValueFactory<>("id"));
+        //colChck.setCellFactory(CheckBoxTableCell.forTableColumn(colChck));
+        colNome.setCellFactory(TextFieldTableCell.forTableColumn());
+        colEspecialidade.setCellFactory(TextFieldTableCell.forTableColumn());
+        colCPF.setCellFactory(TextFieldTableCell.forTableColumn());
+        colLogin.setCellFactory(TextFieldTableCell.forTableColumn());
+        colSenha.setCellFactory(TextFieldTableCell.forTableColumn());
+        colStsPes.setCellFactory(TextFieldTableCell.forTableColumn());
+        colStsUsua.setCellFactory(TextFieldTableCell.forTableColumn());
+        colTipSang.setCellFactory(TextFieldTableCell.forTableColumn());
+        colSexo.setCellFactory(TextFieldTableCell.forTableColumn());
+        colNumRegistro.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
 }

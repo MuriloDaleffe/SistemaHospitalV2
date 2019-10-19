@@ -1,6 +1,7 @@
 package br.com.hospitalif.controller.ClassControllers;
 
 import br.com.hospitalif.DAO2.MedicoDAO;
+import br.com.hospitalif.DAO2.MedicoDAO2;
 import br.com.hospitalif.connectivity.SimpleEntityManager;
 import br.com.hospitalif.model.Medico;
 import util.Rotas;
@@ -11,6 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.sql.SQLException;
 
 public class MedicoController {
@@ -58,6 +60,22 @@ public class MedicoController {
     private Button btnCancel;
 
     @FXML
+    public void initialize() {
+        txtNumRegistro = new TextField();
+        txtEspecialidade = new TextField();
+        txtNome = new TextField();
+        txtStatusUsuario = new TextField();
+        txtLogin = new TextField();
+        txtSenha = new TextField();
+        txtCPF = new TextField();
+        intIdade = new TextField();
+        txtTipoSang = new TextField();
+        cboSexo = new TextField();
+        txtStatusPessoa = new TextField();
+
+    }
+
+    @FXML
     void save(ActionEvent event) throws SQLException {
 
         Medico m = new Medico();
@@ -75,11 +93,8 @@ public class MedicoController {
         m.setStatusDePessoa(txtStatusPessoa.getText());
 
         SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
-        MedicoDAO dao = new MedicoDAO(sem.getEntityManager());
-        dao.save(m);
-        sem.beginTransaction();
-        sem.commit();
-        sem.close();
+        MedicoDAO2 dao = new MedicoDAO2(sem.getEntityManager());
+        dao.salvar(m);
 
         msgInfo();
     }
@@ -113,6 +128,7 @@ public class MedicoController {
 
     @FXML
     public void editar(Medico m){
+        initialize();
         System.out.println(m.getNome());
         txtNome.setText(m.getNome());
         txtNumRegistro.setText(m.getNumRegistro());

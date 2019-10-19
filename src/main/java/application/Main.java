@@ -1,5 +1,7 @@
 package application;
 
+import br.com.hospitalif.DAO2.MedicoDAO2;
+import br.com.hospitalif.model.Medico;
 import util.Rotas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.SQLException;
 
 public class Main extends Application {
@@ -36,29 +41,34 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
+
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(Rotas.PERSISTENCEUNITNAME);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        Medico m = new Medico();
+
+        MedicoDAO2 daoMedico = new MedicoDAO2(entityManager);
+
+        m.setNumRegistro("54321");
+        m.setEspecialidade("Oftalmologista");
+        m.setNome("José Arthur");
+        m.setStatusDeUsuario("Ativo");
+        m.setLogin("JoseOftalmo2");
+        m.setSenha("qwert");
+        m.setCpf("987654321");
+        m.setIdade(30);
+        m.setTipoSanguineo("A-");
+        m.setSexo("M");
+        m.setStatusDePessoa("Médico");
+
+        daoMedico.salvar(m);
+
         launch(args);
 
-//        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(Rotas.PERSISTENCEUNITNAME);
-//        EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        long id = 9;
 //
-//        Medico m = new Medico();
-//
-//        MedicoDAO2 daoMedico = new MedicoDAO2(entityManager);
-//
-//        m.setNumeroRegistro("54321");
-//        m.setEspecialidade("Oftalmologista");
-//        m.setNome("José Arthur");
-//        m.setStatusDeUsuario("Ativo");
-//        m.setLogin("JoseOftalmo2");
-//        m.setSenha("qwert");
-//        m.setCpf("987654321");
-//        m.setIdade(30);
-//        m.setTipoSanguineo("A-");
-//        m.setSexo("M");
-//        m.setStatusDePessoa("Médico");
-//
-//
-//        daoMedico.save(m);
+//        daoMedico.remover(id);
 //
 //        entityManager.getTransaction().begin();
 //        entityManager.getTransaction().commit();

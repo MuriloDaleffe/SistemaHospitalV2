@@ -1,7 +1,11 @@
 package br.com.hospitalif.DAO2;
 
+import util.Rotas;
+
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.Parameter;
+import javax.persistence.Persistence;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
@@ -10,9 +14,14 @@ public class GenericDAO<PK, T> {
 
     private EntityManager entityManager;
 
+    public GenericDAO(){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(Rotas.PERSISTENCEUNITNAME);
+        this.entityManager = entityManagerFactory.createEntityManager();
+
+    }
+
     public GenericDAO(EntityManager em){
         this.entityManager = em;
-
     }
 
     public T getById(PK pk){
