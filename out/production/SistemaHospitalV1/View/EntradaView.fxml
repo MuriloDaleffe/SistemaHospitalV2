@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #000733;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.EntradaController">
+    <children>
+        <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
+            <children>
+                <Label layoutX="56.0" layoutY="69.0" prefHeight="20.0" prefWidth="95.0" text="Data Entrada" textFill="#ddd9d9">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="56.0" layoutY="429.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Separator layoutX="56.0" layoutY="20.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Button fx:id="btnCancel" layoutX="165.0" layoutY="488.0" mnemonicParsing="false" onAction="#reset" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="CANCEL" textFill="WHITE" />
+                <Button fx:id="btnSave" layoutX="299.0" layoutY="488.0" mnemonicParsing="false" onAction="#entrada" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #CE201C;" text="SAVE" textFill="WHITE" />
+                <TextField fx:id="txtSituacao" layoutX="201.0" layoutY="177.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite situação do paciente" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@style.css" />
+                <Label layoutX="54.0" layoutY="184.0" prefHeight="20.0" prefWidth="129.0" text="Situação do Paciente" textFill="#ddd9d9">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            <DatePicker fx:id="dateDataEntrada" layoutX="201.0" layoutY="64.0" style="-fx-background-color: #000733;" />
+            <Label layoutX="56.0" layoutY="125.0" prefHeight="20.0" prefWidth="95.0" text="Data Saída" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dataDataSaida" layoutX="201.0" layoutY="120.0" style="-fx-background-color: #000733;" />
+            </children>
+        </Pane>
+        <Label layoutX="229.0" layoutY="46.0" text="Entrada" textFill="#ddd9d9">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="515.0" layoutY="4.0" prefHeight="20.0" prefWidth="21.0" text="X" textFill="#ddd9d9">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
