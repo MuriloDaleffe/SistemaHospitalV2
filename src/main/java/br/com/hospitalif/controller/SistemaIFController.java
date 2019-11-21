@@ -8,6 +8,7 @@ import util.Rotas;
 
 public class SistemaIFController {
 
+
     @FXML
     private Button btnCad1;
 
@@ -33,6 +34,9 @@ public class SistemaIFController {
     private Button btnCad8;
 
     @FXML
+    private Button btnCad82;
+
+    @FXML
     private Button btnCad11;
 
     @FXML
@@ -55,6 +59,9 @@ public class SistemaIFController {
 
     @FXML
     private Button btnCad81;
+
+    @FXML
+    private Button btnCad811;
 
     @FXML
     void cadastrarAdministrador(ActionEvent event) throws Exception {
@@ -82,6 +89,11 @@ public class SistemaIFController {
     }
 
     @FXML
+    void cadastrarEntrada(ActionEvent event) throws Exception {
+        Main.openPage(Rotas.ENTRADA);
+    }
+
+    @FXML
     void cadastrarGerente(ActionEvent event) throws Exception {
         Main.openPage(Rotas.GERENTE);
     }
@@ -97,43 +109,48 @@ public class SistemaIFController {
     }
 
     @FXML
-    void visualizarAdministrador(ActionEvent event) {
-
+    void visualizarAdministrador(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWADMINISTRADOR);
     }
 
     @FXML
-    void visualizarAtendente(ActionEvent event) {
-
+    void visualizarAtendente(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWATENDENTE);
     }
 
     @FXML
-    void visualizarAtendimento(ActionEvent event) {
-
+    void visualizarAtendimento(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWATENDIMENTO);
     }
 
     @FXML
-    void visualizarEnferPes(ActionEvent event) {
-
+    void visualizarEnferPes(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWENFERMIDADEPESSOAL);
     }
 
     @FXML
-    void visualizarEnfermeiro(ActionEvent event) {
-
+    void visualizarEnfermeiro(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWENFERMEIRO);
     }
 
     @FXML
-    void visualizarGerente(ActionEvent event) {
+    void visualizarEntrada(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWENTRADA);
+    }
 
+    @FXML
+    void visualizarGerente(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWGERENTE);
     }
 
     @FXML
     void visualizarMedico(ActionEvent event) throws Exception {
-        Main.openPage(Rotas.TABLEMEDICOVIEW);
+        Main.openPage(Rotas.TABLEVIEWMEDICO);
     }
 
     @FXML
-    void visualizarPaciente(ActionEvent event) {
-
+    void visualizarPaciente(ActionEvent event)  throws Exception {
+        Main.openPage(Rotas.TABLEVIEWPACIENTE);
     }
 
 }

@@ -2,11 +2,13 @@ package br.com.hospitalif.model;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
 public abstract class Funcionario extends Pessoa{
 
     private String login;
+
     private String senha;
+
     private String statusDeUsuario;
 
 

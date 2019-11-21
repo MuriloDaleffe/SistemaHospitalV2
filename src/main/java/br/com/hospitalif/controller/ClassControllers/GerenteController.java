@@ -1,7 +1,7 @@
 package br.com.hospitalif.controller.ClassControllers;
 
 import application.Main;
-import br.com.hospitalif.DAO2.GerenteDAO;
+import br.com.hospitalif.DAO.GerenteDAO;
 import br.com.hospitalif.connectivity.SimpleEntityManager;
 import br.com.hospitalif.model.Gerente;
 import javafx.event.ActionEvent;
@@ -87,7 +87,7 @@ public class GerenteController {
 
         SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
         GerenteDAO dao = new GerenteDAO(sem.getEntityManager());
-        dao.save(gerente);
+        dao.salvar(gerente);
         sem.beginTransaction();
         sem.commit();
         sem.close();

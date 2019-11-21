@@ -1,10 +1,11 @@
 package br.com.hospitalif.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "EnfermidadePessoal")
 public class EnfermidadePessoal extends Enfermidade {
 
     private String comentario;
@@ -26,4 +27,9 @@ public class EnfermidadePessoal extends Enfermidade {
         this.statusDeEnfermidade = statusDeEnfermidade;
     }
 
+    @Override
+    public String toString() {
+        return getDescricao() +
+                "\t" + getNome() + "\n";
+    }
 }

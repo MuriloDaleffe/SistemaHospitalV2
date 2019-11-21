@@ -1,11 +1,11 @@
 package br.com.hospitalif.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Gerente")
 public class Gerente extends Funcionario {
 
     private String cargo;

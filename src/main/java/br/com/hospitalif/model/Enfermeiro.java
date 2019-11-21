@@ -1,19 +1,19 @@
 package br.com.hospitalif.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Enfermeiro")
 public class Enfermeiro extends Funcionario {
 
-    private int numeroDeRegistro;
+    private String numeroDeRegistro;
 
-    public int getNumeroDeRegistro() {
+    public String getNumeroDeRegistro() {
         return numeroDeRegistro;
     }
 
-    public void setNumeroDeRegistro(int numeroDeRegistro) {
+    public void setNumeroDeRegistro(String numeroDeRegistro) {
         this.numeroDeRegistro = numeroDeRegistro;
     }
 }

@@ -1,16 +1,24 @@
 package br.com.hospitalif.controller.ClassControllers;
 
 import application.Main;
-import br.com.hospitalif.DAO2.PacienteDAO;
+import br.com.hospitalif.DAO.EnfermidadePessoalDAO;
+import br.com.hospitalif.DAO.PacienteDAO;
 import br.com.hospitalif.connectivity.SimpleEntityManager;
+import br.com.hospitalif.model.EnfermidadePessoal;
 import br.com.hospitalif.model.Paciente;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import util.Rotas;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class PacienteController {
 
@@ -42,13 +50,16 @@ public class PacienteController {
     private TextField txtStatusPessoa;
 
     @FXML
-    private TextArea txtHistorico;
+    private TextField txtAltura;
 
     @FXML
-    private TextArea txtDoenca;
+    private TextField txtPeso;
+
 
     @FXML
     void save(ActionEvent event) {
+
+        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
 
         Paciente m = new Paciente();
 
@@ -58,17 +69,17 @@ public class PacienteController {
         m.setTipoSanguineo(txtTipoSang.getText());
         m.setSexo(cboSexo.getText());
         m.setStatusDePessoa(txtStatusPessoa.getText());
-        m.setHistorico(txtHistorico.getText());
-        m.setDoenca(txtDoenca.getText());
+        m.setAltura(Float.valueOf(txtAltura.getText()));
+        m.setPeso(Float.valueOf(txtPeso.getText()));
 
-        SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
         PacienteDAO dao = new PacienteDAO(sem.getEntityManager());
-        dao.save(m);
+        dao.salvar(m);
         sem.beginTransaction();
         sem.commit();
         sem.close();
 
         msgInfo();
+
     }
 
     @FXML
@@ -85,8 +96,8 @@ public class PacienteController {
         txtTipoSang.clear();
         cboSexo.clear();
         txtStatusPessoa.clear();
-        txtHistorico.clear();
-        txtDoenca.clear();
+        txtAltura.clear();
+        txtPeso.clear();
     }
 
     public void msgInfo(){

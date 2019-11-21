@@ -1,30 +1,37 @@
 package br.com.hospitalif.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="Paciente")
 public class Paciente extends Pessoa{
 
-    private String doenca;
-    private String historico;
+    @ManyToMany
+    private List<EnfermidadePessoal> historicoDoenca;
+
+    @OneToMany
+    private List<Atendimento> historicoAtendimento;
 
 
-    public String getDoenca() {
-        return doenca;
+    public List<EnfermidadePessoal> getHistoricoDoenca() {
+        return historicoDoenca;
     }
 
-    public void setDoenca(String doenca) {
-        this.doenca = doenca;
+    public void setHistoricoDoenca(List<EnfermidadePessoal> historicoDoenca) {
+        this.historicoDoenca = historicoDoenca;
     }
 
-    public String getHistorico() {
-        return historico;
+    public List<Atendimento> getHistoricoAtendimento() {
+        return historicoAtendimento;
     }
 
-    public void setHistorico(String historico) {
-        this.historico = historico;
+    public void setHistoricoAtendimento(List<Atendimento> historicoAtendimento) {
+        this.historicoAtendimento = historicoAtendimento;
+    }
+
+    @Override
+    public String toString() {
+        return getNome() +
+                "\t CPF=" + getCpf();
     }
 }

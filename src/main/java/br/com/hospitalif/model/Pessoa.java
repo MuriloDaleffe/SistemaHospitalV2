@@ -2,19 +2,45 @@ package br.com.hospitalif.model;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Pessoa {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
+
     private String nome;
+
     private String cpf;
+
     private int idade;
+
     private String tipoSanguineo;
+
     private String sexo;
+
     private String statusDePessoa;
 
+    private float peso;
+
+    private float altura;
+
+    public float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+
+    public float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
 
     public long getId() {
         return id;

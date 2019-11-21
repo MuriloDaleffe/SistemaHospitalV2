@@ -1,41 +1,33 @@
 package br.com.hospitalif.model;
 
+import javax.persistence.*;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
-public class Entrada extends Paciente {
+@Entity
+public class Entrada {
 
-    private int idEntrada;
-    private Date dataEntrada;
-    private Date dataSaida;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
+    private LocalDate dataEntrada;
+    private LocalDate dataSaida;
     private String statusDeEntrada;
+
+    @OneToMany
     private List<Atendimento> situacaoDePaciente;
 
     public Entrada() {
     }
 
-    public int getIdEntrada() {
-        return idEntrada;
+    public long getId() {
+        return id;
     }
 
-    public void setIdEntrada(int idEntrada) {
-        this.idEntrada = idEntrada;
-    }
-
-    public Date getDataEntrada() {
-        return dataEntrada;
-    }
-
-    public void setDataEntrada(Date dataEntrada) {
-        this.dataEntrada = dataEntrada;
-    }
-
-    public Date getDataSaida() {
-        return dataSaida;
-    }
-
-    public void setDataSaida(Date dataSaida) {
-        this.dataSaida = dataSaida;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getStatusDeEntrada() {
@@ -50,8 +42,23 @@ public class Entrada extends Paciente {
         return situacaoDePaciente;
     }
 
+    public LocalDate getDataEntrada() {
+        return dataEntrada;
+    }
+
+    public void setDataEntrada(LocalDate dataEntrada) {
+        this.dataEntrada = dataEntrada;
+    }
+
+    public LocalDate getDataSaida() {
+        return dataSaida;
+    }
+
+    public void setDataSaida(LocalDate dataSaida) {
+        this.dataSaida = dataSaida;
+    }
+
     public void setSituacaoDePaciente(List<Atendimento> situacaoDePaciente) {
         this.situacaoDePaciente = situacaoDePaciente;
     }
-
 }

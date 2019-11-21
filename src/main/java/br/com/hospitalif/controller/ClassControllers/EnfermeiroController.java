@@ -1,7 +1,7 @@
 package br.com.hospitalif.controller.ClassControllers;
 
 import application.Main;
-import br.com.hospitalif.DAO2.EnfermeiroDAO;
+import br.com.hospitalif.DAO.EnfermeiroDAO;
 import br.com.hospitalif.connectivity.SimpleEntityManager;
 import br.com.hospitalif.model.Enfermeiro;
 import javafx.event.ActionEvent;
@@ -62,12 +62,13 @@ public class EnfermeiroController {
 
         Enfermeiro m = new Enfermeiro();
 
-        m.setNumeroDeRegistro(Integer.parseInt(txtNumRegistro.getText()));
+        m.setNumeroDeRegistro(txtNumRegistro.getText());
         m.setNome(txtNome.getText());
         m.setStatusDeUsuario(txtStatusUsuario.getText());
         m.setLogin(txtLogin.getText());
         m.setSenha(txtSenha.getText());
         m.setCpf(txtCPF.getText());
+        System.out.println(intIdade.getText());
         m.setIdade(Integer.parseInt(intIdade.getText()));
         m.setTipoSanguineo(txtTipoSang.getText());
         m.setSexo(cboSexo.getText());
@@ -75,7 +76,7 @@ public class EnfermeiroController {
 
         SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
         EnfermeiroDAO dao = new EnfermeiroDAO(sem.getEntityManager());
-        dao.save(m);
+        dao.salvar(m);
         sem.beginTransaction();
         sem.commit();
         sem.close();

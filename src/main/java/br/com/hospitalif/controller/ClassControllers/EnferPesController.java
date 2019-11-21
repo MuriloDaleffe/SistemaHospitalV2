@@ -1,7 +1,7 @@
 package br.com.hospitalif.controller.ClassControllers;
 
 import application.Main;
-import br.com.hospitalif.DAO2.EnfermidadePessoalDAO;
+import br.com.hospitalif.DAO.EnfermidadePessoalDAO;
 import br.com.hospitalif.connectivity.SimpleEntityManager;
 import br.com.hospitalif.model.EnfermidadePessoal;
 import javafx.event.ActionEvent;
@@ -63,7 +63,7 @@ public class EnferPesController {
 
         SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
         EnfermidadePessoalDAO dao = new EnfermidadePessoalDAO(sem.getEntityManager());
-        dao.save(ep);
+        dao.salvar(ep);
         sem.beginTransaction();
         sem.commit();
         sem.close();

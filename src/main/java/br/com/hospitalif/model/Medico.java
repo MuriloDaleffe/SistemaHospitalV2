@@ -1,14 +1,12 @@
 package br.com.hospitalif.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name="Medico")
 public class Medico extends Funcionario {
 
     private String numRegistro;
+
     private String especialidade;
 
     public Medico(long id, String nome, String numRegistro, String especialidade, String login, String senha, String cpf,
@@ -31,7 +29,7 @@ public class Medico extends Funcionario {
 
     }
 
-    @Column(name="numRegistro")
+
     public String getNumRegistro() {
         return numRegistro;
     }
@@ -48,4 +46,13 @@ public class Medico extends Funcionario {
         this.especialidade = especialidade;
     }
 
+    @Override
+    public String toString() {
+        return "Medico{" +
+                "numRegistro='" + numRegistro + '\'' +
+                ", especialidade='" + especialidade + '\'' +
+                ", nome='" + getNome() + '\'' +
+                ", CPF='" + getCpf() + '\'' +
+                '}';
+    }
 }

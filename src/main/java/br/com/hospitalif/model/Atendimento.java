@@ -1,28 +1,36 @@
 package br.com.hospitalif.model;
 
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
-public class Atendimento extends Entrada {
+@Entity
+public class Atendimento {
 
-    private int idAtendimento;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
     private String comentarioEnfermeiro;
     private String comentarioMedico;
-    private float peso;
-    private float altura;
-    private Date data;
-    private String doenca;
+    private LocalDate data;
+
+    @OneToOne
+    private Paciente paciente;
+
+    @ManyToMany
+    private List<EnfermidadePessoal> situacaoDoenca;
 
 
     public Atendimento() {
     }
 
-    public int getIdAtendimento() {
-        return idAtendimento;
+    public long getId() {
+        return id;
     }
 
-    public void setIdAtendimento(int idAtendimento) {
-        this.idAtendimento = idAtendimento;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getComentarioEnfermeiro() {
@@ -41,35 +49,33 @@ public class Atendimento extends Entrada {
         this.comentarioMedico = comentarioMedico;
     }
 
-    public float getPeso() {
-        return peso;
-    }
-
-    public void setPeso(float peso) {
-        this.peso = peso;
-    }
-
-    public float getAltura() {
-        return altura;
-    }
-
-    public void setAltura(float altura) {
-        this.altura = altura;
-    }
-
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
-    public String getDoenca() {
-        return doenca;
+    public Paciente getPaciente() {
+        return paciente;
     }
 
-    public void setDoenca(String doenca) {
-        this.doenca = doenca;
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public List<EnfermidadePessoal> getSituacaoDoenca() {
+        return situacaoDoenca;
+    }
+
+    public void setSituacaoDoenca(List<EnfermidadePessoal> situacaoDoenca) {
+        this.situacaoDoenca = situacaoDoenca;
+    }
+
+    @Override
+    public String toString() {
+        return getPaciente().getNome() +
+                "\t" + getData();
     }
 }

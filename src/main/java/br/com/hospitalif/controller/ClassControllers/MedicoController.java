@@ -1,7 +1,6 @@
 package br.com.hospitalif.controller.ClassControllers;
 
-import br.com.hospitalif.DAO2.MedicoDAO;
-import br.com.hospitalif.DAO2.MedicoDAO2;
+import br.com.hospitalif.DAO.MedicoDAO;
 import br.com.hospitalif.connectivity.SimpleEntityManager;
 import br.com.hospitalif.model.Medico;
 import util.Rotas;
@@ -12,7 +11,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import javax.swing.*;
 import java.sql.SQLException;
 
 public class MedicoController {
@@ -59,6 +57,7 @@ public class MedicoController {
     @FXML
     private Button btnCancel;
 
+
     @FXML
     public void initialize() {
         txtNumRegistro = new TextField();
@@ -87,15 +86,16 @@ public class MedicoController {
         m.setLogin(txtLogin.getText());
         m.setSenha(txtSenha.getText());
         m.setCpf(txtCPF.getText());
+        System.out.println(intIdade.getText());
         m.setIdade(Integer.parseInt(intIdade.getText()));
         m.setTipoSanguineo(txtTipoSang.getText());
         m.setSexo(cboSexo.getText());
         m.setStatusDePessoa(txtStatusPessoa.getText());
 
         SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
-        MedicoDAO2 dao = new MedicoDAO2(sem.getEntityManager());
+        MedicoDAO dao = new MedicoDAO(sem.getEntityManager());
         dao.salvar(m);
-
+        sem.close();
         msgInfo();
     }
 
