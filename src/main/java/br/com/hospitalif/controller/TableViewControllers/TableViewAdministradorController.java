@@ -24,12 +24,15 @@ import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
+import net.sf.jasperreports.engine.JRException;
+import report.PrintReport;
 import util.Rotas;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -126,8 +129,9 @@ public class TableViewAdministradorController  implements Initializable {
     }
 
     @FXML
-    void gerarRelatorio(ActionEvent event) {
-
+    void gerarRelatorio(ActionEvent event) throws ClassNotFoundException, SQLException, JRException {
+        PrintReport pr = new PrintReport();
+        pr.showReport("Relatorio_Administradores.jrxml");
     }
 
     @FXML

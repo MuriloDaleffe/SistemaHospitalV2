@@ -18,7 +18,7 @@ public class Atendimento {
     @OneToOne
     private Paciente paciente;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<EnfermidadePessoal> situacaoDoenca;
 
 

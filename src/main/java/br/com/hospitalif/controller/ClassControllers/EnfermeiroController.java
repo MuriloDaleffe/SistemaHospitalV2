@@ -52,9 +52,6 @@ public class EnfermeiroController {
     private TextField txtStatusPessoa;
 
     @FXML
-    private TextField txtEspecialidade;
-
-    @FXML
     private TextField txtNumRegistro;
 
     @FXML
@@ -92,7 +89,6 @@ public class EnfermeiroController {
     @FXML
     void reset(ActionEvent event) {
         txtNumRegistro.clear();
-        txtEspecialidade.clear();
         txtNome.clear();
         txtStatusUsuario.clear();
         txtLogin.clear();

@@ -37,7 +37,7 @@ public class MedicoController {
     private TextField txtCPF;
 
     @FXML
-    private TextField intIdade;
+    private TextField altIdade;
 
     @FXML
     private TextField txtTipoSang;
@@ -58,21 +58,21 @@ public class MedicoController {
     private Button btnCancel;
 
 
-    @FXML
-    public void initialize() {
-        txtNumRegistro = new TextField();
-        txtEspecialidade = new TextField();
-        txtNome = new TextField();
-        txtStatusUsuario = new TextField();
-        txtLogin = new TextField();
-        txtSenha = new TextField();
-        txtCPF = new TextField();
-        intIdade = new TextField();
-        txtTipoSang = new TextField();
-        cboSexo = new TextField();
-        txtStatusPessoa = new TextField();
-
-    }
+//    @FXML
+//    public void initialize() {
+//        txtNumRegistro = new TextField();
+//        txtEspecialidade = new TextField();
+//        txtNome = new TextField();
+//        txtStatusUsuario = new TextField();
+//        txtLogin = new TextField();
+//        txtSenha = new TextField();
+//        txtCPF = new TextField();
+//        altIdade = new TextField();
+//        txtTipoSang = new TextField();
+//        cboSexo = new TextField();
+//        txtStatusPessoa = new TextField();
+//
+//    }
 
     @FXML
     void save(ActionEvent event) throws SQLException {
@@ -86,15 +86,14 @@ public class MedicoController {
         m.setLogin(txtLogin.getText());
         m.setSenha(txtSenha.getText());
         m.setCpf(txtCPF.getText());
-        System.out.println(intIdade.getText());
-        m.setIdade(Integer.parseInt(intIdade.getText()));
+        System.out.println(altIdade.getText());
+        m.setIdade(Integer.parseInt(1+altIdade.getText()));
         m.setTipoSanguineo(txtTipoSang.getText());
         m.setSexo(cboSexo.getText());
         m.setStatusDePessoa(txtStatusPessoa.getText());
 
         SimpleEntityManager sem = new SimpleEntityManager(Rotas.PERSISTENCEUNITNAME);
-        MedicoDAO dao = new MedicoDAO(sem.getEntityManager());
-        dao.salvar(m);
+        new MedicoDAO(sem.getEntityManager()).salvar(m);
         sem.close();
         msgInfo();
     }
@@ -113,7 +112,7 @@ public class MedicoController {
         txtLogin.clear();
         txtSenha.clear();
         txtCPF.clear();
-        intIdade.clear();
+        altIdade.clear();
         txtTipoSang.clear();
         cboSexo.clear();
         txtStatusPessoa.clear();
@@ -128,7 +127,7 @@ public class MedicoController {
 
     @FXML
     public void editar(Medico m){
-        initialize();
+
         System.out.println(m.getNome());
         txtNome.setText(m.getNome());
         txtNumRegistro.setText(m.getNumRegistro());
@@ -137,7 +136,7 @@ public class MedicoController {
         txtLogin.setText(m.getLogin());
         txtSenha.setText(m.getSenha());
         txtCPF.setText(m.getCpf());
-        intIdade.setText(String.valueOf(m.getIdade()));
+        altIdade.setText(String.valueOf(m.getIdade()));
         txtTipoSang.setText(m.getTipoSanguineo());
         cboSexo.setText(m.getSexo());
         txtStatusPessoa.setText(m.getStatusDePessoa());

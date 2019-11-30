@@ -103,7 +103,7 @@
                </font>
             </Label>
             <TextField fx:id="txtNumRegistro" layoutX="321.0" layoutY="65.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite o número de registro" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@../../CSS/app.css" />
-            <TextField fx:id="intIdade" layoutX="315.0" layoutY="470.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a idade" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@../../CSS/app.css" />
+            <TextField fx:id="altIdade" layoutX="315.0" layoutY="470.0" opacity="0.5" prefHeight="34.0" prefWidth="281.0" promptText="Digite a idade" style="-fx-border-color: #4a64a9; -fx-background-color: #000733; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@../../CSS/app.css" />
             <Label layoutX="161.0" layoutY="477.0" prefHeight="20.0" prefWidth="66.0" text="Idade" textFill="#ddd9d9">
                <font>
                   <Font size="14.0" />

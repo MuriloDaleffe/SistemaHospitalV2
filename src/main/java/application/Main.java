@@ -165,7 +165,7 @@ public class Main extends Application {
         enf.setIdade(30);
         enf.setTipoSanguineo("A-");
         enf.setSexo("M");
-        enf.setStatusDePessoa("Médico");
+        enf.setStatusDePessoa("Enfermeiro");
 
         daoEnfermeiro.salvar(enf);
 

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Atendimentos" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38df7d91-7c5e-4b19-bd05-49a9c7a093cc">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conexao_HospitalIF"/>
+	<queryString language="SQL">
+		<![CDATA[select * from atendimento]]>
+	</queryString>
+	<field name="comentarioEnfermeiro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="comentarioEnfermeiro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+	</field>
+	<field name="comentarioMedico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="comentarioMedico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+	</field>
+	<field name="data" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+	</field>
+	<field name="paciente_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="paciente_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="atendimento"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{data}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="be8cec94-a5d2-4523-b72d-a0e0d9c2bc25"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[data]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="da16077d-7143-464a-b302-366180c5cb2e"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="863f9e13-e3fa-48b5-bf21-70b6a2503be9"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{paciente_id}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="d2a5b3ee-88b2-400d-841e-a5c7acfeb081"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{paciente_id}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="bf20c4a1-5670-4509-8568-e71d80e2c249"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[paciente_id]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="535259d1-1e8e-4c3f-bcb5-5108c167ccb1"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="03314f47-ecee-4c08-a579-38d550ac94a5"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="6f7c56e2-c06f-43ea-a5f6-c2361b9d0e49"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="4617e83d-fc0c-4db6-a1dd-a5d41562fbb1"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="07f65c64-c604-411b-bd7f-839c5a24caae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="14025134-14d9-4331-9868-91a7501cef4f"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[comentarioEnfermeiro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="277" y="0" width="277" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7ef16dbb-6801-4b3a-8890-45b07e176bf6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="977e7f1a-3d33-437d-b1d9-4a4775a220df"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[comentarioMedico]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="73406b4d-d241-4b3c-a70d-a2b1472f0305"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="277" height="20" uuid="ae43710c-2a25-4c30-9c19-cc35e60b13f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="14025134-14d9-4331-9868-91a7501cef4f"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comentarioEnfermeiro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="277" y="0" width="277" height="20" uuid="a9a09a00-7c86-4c2c-9268-8ce758bea64a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="977e7f1a-3d33-437d-b1d9-4a4775a220df"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comentarioMedico}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="ecd45989-d6b5-406b-8a55-a8013957e4c6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="674b6010-073b-4b4b-a82e-1936adf34331"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="23ec95f6-6e26-46a7-993e-ee8876c1072e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
